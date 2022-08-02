@@ -105,8 +105,8 @@ declare -a package_names=(
 	)
 install_packages "${package_names[@]}"
 
-sudo pip install --upgrade cryptography
-sudo python -m easy_install --upgrade pyOpenSSL
+sudo apt install python-cryptography
+sudo apt install python-openssl
 sudo pip install --upgrade pip==20.3
 
 
@@ -183,7 +183,7 @@ if [ $INSTALL_TYPE == "full" ]; then
 	# STEP 4A: Install librealsense
 	if [ $(dpkg-query -W -f='${Status}' librealsense2 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
     sudo apt-key adv --keyserver keys.gnupg.net --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key F6E65AC044F831AC80A06380C8B3A55A6F3EFCDE
-		sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo xenial main" -u
+		sudo add-apt-repository "deb https://librealsense.intel.com/Debian/apt-repo $(lsb_release -cs) main" -u
 		sudo apt-get update
 		version="2.33.1-0~realsense0.2140"
 		sudo apt-get -y install librealsense2-udev-rules=${version}
@@ -236,7 +236,7 @@ if [ ! -d "$LOCOBOT_FOLDER/src" ]; then
 fi
 if [ ! -d "$LOCOBOT_FOLDER/src/pyrobot" ]; then
 	cd $LOCOBOT_FOLDER/src
-	git clone https://github.com/facebookresearch/pyrobot.git
+	git clone https://github.com/ISCI-LAB/pyrobot.git
 	cd pyrobot
 	git checkout main
 	git submodule update --init --recursive
@@ -268,7 +268,7 @@ if [ ! -d "$LOCOBOT_FOLDER/src/pyrobot/robots/LoCoBot/thirdparty" ]; then
 		git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git
 		git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git
 		git clone https://github.com/ros-controls/ros_control.git
-		git clone https://github.com/kalyanvasudev/ORB_SLAM2.git
+		git clone https://github.com/ISCI-LAB/ORB_SLAM2.git
 		git clone https://github.com/s-gupta/ar_track_alvar.git
 
 	if [ $ROS_NAME == "kinetic" ]; then
@@ -285,13 +285,13 @@ if [ ! -d "$LOCOBOT_FOLDER/src/pyrobot/robots/LoCoBot/thirdparty" ]; then
 		cd DynamixelSDK && git checkout 05dcc5c551598b4d323bf1fb4b9d1ee03ad1dfd9 && cd ..
 		cd dynamixel-workbench-msgs && git checkout 93856f5d3926e4d7a63055c04a3671872799cc86 && cd ..
 		cd ros_control && git checkout cd39acfdb2d08dc218d04ff98856b0e6a525e702 && cd ..
-		cd ORB_SLAM2 && git checkout ec8d750d3fc813fe5cef82f16d5cc11ddfc7bb3d && cd ..
+		cd ORB_SLAM2 && git checkout 1cdddecb76a502f500680b36f8ec7cd0c5e94e28 && cd ..
 		cd ar_track_alvar && git checkout a870d5f00a548acb346bfcc89d42b997771d71a3 && cd ..
 	fi
 fi
 
 cd $LOCOBOT_FOLDER
-rosdep update 
+rosdep update --include-eol-distros
 rosdep install --from-paths src/pyrobot -i -y
 cd $LOCOBOT_FOLDER/src/pyrobot/robots/LoCoBot/install
 chmod +x install_orb_slam2.sh
