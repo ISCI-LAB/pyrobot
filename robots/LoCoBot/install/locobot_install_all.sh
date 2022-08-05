@@ -285,7 +285,7 @@ if [ ! -d "$LOCOBOT_FOLDER/src/pyrobot/robots/LoCoBot/thirdparty" ]; then
 		cd DynamixelSDK && git checkout 05dcc5c551598b4d323bf1fb4b9d1ee03ad1dfd9 && cd ..
 		cd dynamixel-workbench-msgs && git checkout 93856f5d3926e4d7a63055c04a3671872799cc86 && cd ..
 		cd ros_control && git checkout cd39acfdb2d08dc218d04ff98856b0e6a525e702 && cd ..
-		cd ORB_SLAM2 && git checkout 1cdddecb76a502f500680b36f8ec7cd0c5e94e28 && cd ..
+		cd ORB_SLAM2 && git checkout e53272859054a0533120e3c32bc1fdacae9ec6da && cd ..
 		cd ar_track_alvar && git checkout a870d5f00a548acb346bfcc89d42b997771d71a3 && cd ..
 	fi
 fi
