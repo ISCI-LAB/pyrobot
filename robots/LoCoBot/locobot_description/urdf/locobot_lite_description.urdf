@@ -498,7 +498,7 @@
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
                 <mesh filename="package://locobot_description/meshes/finger_r.STL"/>
-            </geometry>
+	    </geometry>
         </collision>
     </link>
     <joint name="joint_6" type="prismatic">
@@ -527,7 +527,7 @@
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
                 <mesh filename="package://locobot_description/meshes/finger_l.STL"/>
-            </geometry>
+	    </geometry>
         </collision>
     </link>
     <joint name="joint_7" type="prismatic">

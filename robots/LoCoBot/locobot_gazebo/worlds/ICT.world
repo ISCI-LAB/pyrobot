@@ -1,0 +1,1004 @@
+<?xml version="1.0" ?>
+<sdf version='1.7'>
+  <world name='default'>
+    <include>
+      <uri>model://unit_box_1</uri>
+      <name>unit_box_1</name>
+      <pose>0 -0.3 0.015 0 0 -1.57</pose>
+    </include>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <model name='column_1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_1/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_1/materials/scripts</uri>
+              <uri>model://ICT_models/column_1/materials/textures</uri>
+              <name>model_material/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.5 0.6 0 0 -0 0</pose>
+    </model>
+    <model name='column_2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_2/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_2/materials/scripts</uri>
+              <uri>model://ICT_models/column_2/materials/textures</uri>
+              <name>model_material2/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>2 0.866 0 0 -0 0</pose>
+    </model>
+    <model name='column_3'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_3/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_3/materials/scripts</uri>
+              <uri>model://ICT_models/column_3/materials/textures</uri>
+              <name>model_material3/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>2.5 1 0 0 -0 0</pose>
+    </model>
+    <model name='column_4'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_4/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_4/materials/scripts</uri>
+              <uri>model://ICT_models/column_4/materials/textures</uri>
+              <name>model_material4/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>3 0.866 0 0 -0 0</pose>
+    </model>
+    <model name='column_5'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_5/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_5/materials/scripts</uri>
+              <uri>model://ICT_models/column_5/materials/textures</uri>
+              <name>model_material5/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>3.366 0.5 0 0 -0 0</pose>
+    </model>
+    <model name='column_6'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_6/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_6/materials/scripts</uri>
+              <uri>model://ICT_models/column_6/materials/textures</uri>
+              <name>model_material6/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>3.5 0 0 0 -0 0</pose>
+    </model>
+    <model name='column_7'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_7/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_7/materials/scripts</uri>
+              <uri>model://ICT_models/column_7/materials/textures</uri>
+              <name>model_material7/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>3.366 -0.5 0 0 -0 0</pose>
+    </model>
+    <model name='column_8'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_8/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_8/materials/scripts</uri>
+              <uri>model://ICT_models/column_8/materials/textures</uri>
+              <name>model_material8/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>3 -0.866 0 0 -0 0</pose>
+    </model>
+    <model name='column_9'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_9/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_9/materials/scripts</uri>
+              <uri>model://ICT_models/column_9/materials/textures</uri>
+              <name>model_material9/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>2.5 -1 0 0 -0 0</pose>
+    </model>
+    <model name='column_10'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_10/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_10/materials/scripts</uri>
+              <uri>model://ICT_models/column_10/materials/textures</uri>
+              <name>model_material10/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>2 -0.866 0 0 -0 0</pose>
+    </model>
+    <model name='column_11'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_11/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_11/materials/scripts</uri>
+              <uri>model://ICT_models/column_11/materials/textures</uri>
+              <name>model_material11/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1.5 -0.6 0 0 -0 0</pose>
+    </model>
+    <model name='column_12'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_12/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_12/materials/scripts</uri>
+              <uri>model://ICT_models/column_12/materials/textures</uri>
+              <name>model_material12/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1 -0.866 0 0 -0 0</pose>
+    </model>
+    <model name='column_13'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_13/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_13/materials/scripts</uri>
+              <uri>model://ICT_models/column_13/materials/textures</uri>
+              <name>model_material13/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.5 -1 0 0 -0 0</pose>
+    </model>
+    <model name='column_14'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_14/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_14/materials/scripts</uri>
+              <uri>model://ICT_models/column_14/materials/textures</uri>
+              <name>model_material14/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0 -0.866 0 0 -0 0</pose>
+    </model>
+    <model name='column_15'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_15/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_15/materials/scripts</uri>
+              <uri>model://ICT_models/column_15/materials/textures</uri>
+              <name>model_material15/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.366 -0.5 0 0 -0 0</pose>
+    </model>
+    <model name='column_16'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_16/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_16/materials/scripts</uri>
+              <uri>model://ICT_models/column_16/materials/textures</uri>
+              <name>model_material16/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.5 0 0 0 -0 0</pose>
+    </model>
+    <model name='column_17'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_17/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_17/materials/scripts</uri>
+              <uri>model://ICT_models/column_17/materials/textures</uri>
+              <name>model_material17/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>-0.366 0.5 0 0 -0 0</pose>
+    </model>
+    <model name='column_18'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_18/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_18/materials/scripts</uri>
+              <uri>model://ICT_models/column_18/materials/textures</uri>
+              <name>model_material18/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0 0.866 0 0 -0 0</pose>
+    </model>
+    <model name='column_19'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_19/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_19/materials/scripts</uri>
+              <uri>model://ICT_models/column_19/materials/textures</uri>
+              <name>model_material19/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>0.5 1 0 0 -0 0</pose>
+    </model>
+    <model name='column_20'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 1.3</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>0.5 0.5 0.8</scale>
+              <uri>model://ICT_models/column_20/meshes/model.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ICT_models/column_20/materials/scripts</uri>
+              <uri>model://ICT_models/column_20/materials/textures</uri>
+              <name>model_material20/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose>1 0.866 0 0 -0 0</pose>
+    </model>
+
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <wind/>
+
+    
+    <model name='Apriltag36_11_00001'>
+      <link name='main'>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <visual name='main_Visual'>
+          <geometry>
+            <box>
+              <size>0.2125 0.2125 0.01</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://Apriltag36_11_00001/materials/scripts</uri>
+              <uri>model://Apriltag36_11_00001/materials/textures</uri>
+              <name>Apriltag36_11_00001</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+      <pose>3.39241 0.024708 0.6154742 3.14159 -1.56955 3.14159</pose>
+    </model>
+  </world>
+</sdf>
